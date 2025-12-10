@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Global Reset & Typography --- */
-        /* box-sizing: border-box is a non-negotiable best practice [cite: 321] */
+        /* global reset & typography */
         * {
             box-sizing: border-box;
         }
@@ -19,7 +18,7 @@
             margin: 0;
             padding: 0;
             font-family: "Roboto", sans-serif;
-            font-size: 16px; /* Base size for rem/em calculation [cite: 566] */
+            font-size: 16px; /* base size */
             color: #333;
             background-color: #E0E2DF;
             line-height: 1.6; 
@@ -29,8 +28,7 @@
             font-family: "Playfair Display", serif;
         }
 
-        /* --- Layout Container --- */
-        /* 1200px Centered Layout [cite: 487-489] */
+        /* container for layout */
         .container {
             max-width: 1200px;
             margin: 0 auto; 
@@ -39,7 +37,7 @@
             min-height: 100vh;
         }
 
-        /* --- Navigation --- */
+        /* nav system  */
         header {
             display: grid;
             grid-template-columns: 50% 50%;
@@ -55,16 +53,15 @@
             color: #655C5B;
         }
 
-        /* Navigation List - Semantic HTML [cite: 510] */
         nav ul {
-            list-style: none; /* Removes bullets [cite: 520] */
+            list-style: none; 
             padding: 0;
             margin: 0;
             text-align: right;
         }
 
         nav li {
-            display: inline-block; /* Horizontal menu technique [cite: 516] */
+            display: inline-block;
             margin-left: 40px;
         }
 
@@ -83,11 +80,11 @@
             color: white; 
         }
 
-        /* --- Main Content Grid --- */
-        /* Using CSS Grid for 2-column layout [cite: 396-405] */
+        /* main content grid for the two column layout */
+    
         #about-grid {
             display: grid;
-            grid-template-columns: 42% 58%; /* Two equal columns [cite: 404] */
+            grid-template-columns: 42% 58%; /* i know it's not 50/50, but i feel theres a little more dimension */
             gap: 35px; 
             padding: 60px 80px;
             align-items: start; 
@@ -100,15 +97,17 @@
         #about-grid > .image-container {
             order: 1; 
         }
+      
+      /*I did it backwards and was wondering if there was a way to just swap, and there was! I asked claude to explain it to me*/
 
-        /* --- Left Column: Image Area --- */
+        /* image */
         .image-container {
             width: 100%;
-            position: relative; /* Context for absolute positioning [cite: 445] */
+            position: relative; 
             padding-right: 123px; 
         }
 
-        /* Styles for the split headers */
+        /* style for the split headers */
         .about-title {
             font-size: 5em;
             color: #816B6E;
@@ -119,7 +118,7 @@
             text-align: right;
         }
 
-        /* Absolute positioning for "ME" title [cite: 447] */
+        /* separate me heading */
         .me-title {
             position: absolute; 
             right: 0; 
@@ -139,9 +138,10 @@
             display: block;
             border-bottom: 10px solid #DDBDBE; 
             box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.2); 
+          /* the box shadow i think added more pazazz to the image, ties everything togethe, researched how to do the shadows where I used throughout, quite life changing */
         }
 
-        /* --- Right Column: Text --- */
+        /* tect right column */
         .text-container {
             padding-right: 10px;
             padding-top: 75px; 
@@ -153,15 +153,13 @@
             color: #5D4F51;
         }
 
-        /* --- UPDATED: Social Media Icons Styling --- */
-        /* Using basic Block/Inline alignment from Notes  */
+
+        /* social media click icons*/
         .social-icons {
             margin-top: 15px;
-            /* Using text-align instead of flexbox to align inline images */
             text-align: right; 
         }
 
-        /* Images are inline elements by default  */
         .social-icons img {
             width: 100px;
             height: auto;
@@ -169,8 +167,8 @@
             box-shadow: none;
             transition: opacity 0.3s ease;
             
-            /* Add margin to separate the inline images */
-            margin-left: 15px; 
+            /* the margin to separate the inline images */
+            margin-left: 35px; 
         }
 
         .social-icons img:hover {
@@ -178,7 +176,7 @@
             cursor: pointer;
         }
 
-        /* --- Footer Styles --- */
+        /* footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -188,9 +186,9 @@
             border-top: 1px solid #DDBDBE; 
         }
 
-        /* Footer Table Layout */
+        /* table footer layout*/
         .footer-table-wrapper {
-            display: flex; /* Centering the table wrapper */
+            display: flex; 
             justify-content: center;
             margin-bottom: 20px;
         }
