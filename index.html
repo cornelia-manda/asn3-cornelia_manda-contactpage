@@ -42,10 +42,10 @@
         /* --- Navigation --- */
         header {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 50% 50%;
             align-items: center;
             background-color: #DDBDBE;
-            padding: 40px 60px;
+            padding: 15px 60px;
         }
 
         .logo {
@@ -87,11 +87,12 @@
         /* Using CSS Grid for 2-column layout */
         #about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
-            gap: 60px; /* Spacing between image and text */
+            grid-template-columns: 50% 50%; /* Two equal columns */
+            gap: 35px; /* Spacing between image and text */
             padding: 60px 80px;
             align-items: start; /* Aligns content to top */
         }
+       
         
         #about-grid > .text-container {
             order: -1; /* Moves text to the left */
@@ -107,16 +108,18 @@
             position: relative; /* Essential for positioning "ME" absolutely */
             
             /* ADDED: Extra padding on the right to make space for the "ME" text */
-            padding-right: 120px; 
+            padding-right: 123px; 
         }
 
-        /* NEW: Styles for the split headers */
+        /* Styles for the split headers */
         .about-title {
             font-size: 5em;
             color: #816B6E;
             margin: 0 0 10px 0; /* Space between ABOUT and image */
+            padding-left: 205px;
             line-height: 1;
             text-transform: uppercase;
+            text-align: right;
         }
 
         .me-title {
@@ -124,7 +127,7 @@
             
             /* Positions it inside the new padding area on the right */
             right: 0; 
-            top: 150px; /* Adjusts vertical position */
+            top: 110px; /* Adjusts vertical position */
 
             font-size: 5em;
             color: #816B6E;
@@ -138,21 +141,41 @@
             white-space: nowrap;
         }
 
-        .image-container img {
+        /* Styles for the main contact photo */
+        .image-container > img {
             width: 100%;
             display: block;
             border-bottom: 10px solid #DDBDBE; /* Decorative border matching theme */
             box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.2); /* Subtle shadow for depth */
         }
 
-        /* --- Right Column: Text --- */
-        .text-container {
-            padding-right: 20px;
-            /* Added top padding to align visually with the image, since "ABOUT" pushes image down */
-            padding-top: 80px; 
+        /* --- NEW: Social Media Icons Styling --- */
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: flex-end; /* Aligns icons to the right edge of the photo */
+            gap: 15px; /* Space between icons */
         }
 
-        /* Removed the global h1 style that was here to use specific classes instead */
+        /* IMPORTANT: Override the main image styles for these small icons */
+        .social-icons img {
+            width: 40px !important; /* Keep them small */
+            height: auto;
+            border-bottom: none !important; /* No decorative border */
+            box-shadow: none !important; /* No shadow */
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            opacity: 0.7; /* Hover effect */
+            cursor: pointer;
+        }
+
+        /* --- Right Column: Text --- */
+        .text-container {
+            padding-right: 10px;
+            padding-top: 75px; 
+        }
 
         .bio-text p {
             margin-bottom: 20px;
@@ -233,6 +256,15 @@
 
                 <img src="contactphoto.jpeg" alt="Portrait of Cornelia Manda photographing outdoors">
                 
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="instagram.jpg" alt="Instagram Profile">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn Profile">
+                    </a>
+                </div>
+
                 <h1 class="me-title">ME</h1>
             </div>
 
