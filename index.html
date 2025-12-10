@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornelia Manda | Portfolio | Contact & About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Global Reset & Typography --- */
+        /* box-sizing: border-box is a non-negotiable best practice */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px; /* Base size for rem/em calculation */
+            color: #333;
+            background-color: #E0E2DF;
+            line-height: 1.6; /* Improves readability */
+        }
+
+        h1, h2, h3, a, th {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* --- Layout Container --- */
+        /* 1200px Centered Layout per Assignment Requirements */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto; /* Centers the container */
+            padding: 0;
+            background-color: #E0E2DF;
+            min-height: 100vh;
+        }
+
+        /* --- Navigation --- */
+        header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            background-color: #DDBDBE;
+            padding: 40px 60px;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            color: #655C5B;
+        }
+
+        nav ul {
+            list-style: none; /* Removes bullets */
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        nav li {
+            display: inline-block; /* Horizontal menu */
+            margin-left: 40px;
+        }
+
+        nav a {
+            text-decoration: none; /* Removes underline */
+            color: #655C5B; 
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white; /* Visual feedback */
+        }
+
+        /* Sets the 3rd link (Contact) to white to show active state */
+        nav li:nth-child(3) a {
+            color: white; 
+        }
+
+        /* --- Main Content Grid --- */
+        /* Using CSS Grid for 2-column layout */
+        #about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 60px; /* Spacing between image and text */
+            padding: 60px 80px;
+            align-items: start; /* Aligns content to top */
+        }
+        
+        #about-grid > .text-container {
+            order: -1; /* Moves text to the left */
+        }
+        
+        #about-grid > .image-container {
+            order: 1; /* Keeps image on the right */
+        }
+
+        /* --- Left Column: Image Area --- */
+        .image-container {
+            width: 100%;
+            position: relative; /* Essential for positioning "ME" absolutely */
+            
+            /* ADDED: Extra padding on the right to make space for the "ME" text */
+            padding-right: 120px; 
+        }
+
+        /* NEW: Styles for the split headers */
+        .about-title {
+            font-size: 5em;
+            color: #816B6E;
+            margin: 0 0 10px 0; /* Space between ABOUT and image */
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .me-title {
+            position: absolute; /* Removes from normal flow */
+            
+            /* Positions it inside the new padding area on the right */
+            right: 0; 
+            top: 150px; /* Adjusts vertical position */
+
+            font-size: 5em;
+            color: #816B6E;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+
+            /* Rotates the text 90 degrees */
+            transform: rotate(90deg); 
+            transform-origin: center; 
+            white-space: nowrap;
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+            border-bottom: 10px solid #DDBDBE; /* Decorative border matching theme */
+            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.2); /* Subtle shadow for depth */
+        }
+
+        /* --- Right Column: Text --- */
+        .text-container {
+            padding-right: 20px;
+            /* Added top padding to align visually with the image, since "ABOUT" pushes image down */
+            padding-top: 80px; 
+        }
+
+        /* Removed the global h1 style that was here to use specific classes instead */
+
+        .bio-text p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #444;
+        }
+
+        /* --- Contact Table Section --- */
+        /* Satisfies requirement for "HTML table containing relevant information" */
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #655C5B;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left; /* Headers usually bold and centered, override to left */
+            color: #816B6E;
+            font-size: 1.2em;
+            padding-bottom: 10px;
+            width: 120px;
+            vertical-align: top;
+        }
+
+        td {
+            padding-bottom: 10px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        td a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1px solid #DDBDBE;
+            transition: all 0.3s ease;
+        }
+
+        td a:hover {
+            color: #816B6E;
+            border-bottom: 1px solid #816B6E;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 20px;
+            color: #655C5B;
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo">Cornelia Manda</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="about-grid">
+            
+            <div class="image-container">
+                <h1 class="about-title">ABOUT</h1>
+
+                <img src="contactphoto.jpeg" alt="Portrait of Cornelia Manda photographing outdoors">
+                
+                <h1 class="me-title">ME</h1>
+            </div>
+
+            <div class="text-container">
+                
+                <div class="bio-text">
+                    <p>
+                        Hi, I'm Cornelia, a photographer and <strong>Global Business & Digital Arts (GBDA)</strong> student at the University of Waterloo.
+                    </p>
+                    <p>
+                        My passion for photography and digital creation is rooted in the belief that a photograph and project is a timeless memory. I specialize and love capturing life's most authentic moments, focusing on preserving memories filled with genuine emotion and connection that can be cherished for years to come.
+                    </p>
+                    <p>
+                        As a GBDA student, I bring a unique blend of artistic vision and digital proficiency to every project. For me, documenting these moments whether for clients or for my personal projects is a continuous, emotional journey.
+                    </p>
+                    <p>
+                        I thrive on the positive energy of others. When I converse with and capture someone's happiness, that energy and kindness inherently radiates into my own work, creating a joyful and collaborative experience for everyone involved.
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <table>
+                        <tr>
+                            <th>Email:</th>
+                            <td><a href="mailto:cmanda@uwaterloo.ca">cmanda@uwaterloo.ca</a></td>
+                        </tr>
+                        <tr>
+                            <th>School:</th>
+                            <td><a href="https://uwaterloo.ca/global-business-digital-arts/" target="_blank">University of Waterloo</a></td>
+                        </tr>
+                        <tr>
+                            <th>Location:</th>
+                            <td>Kitchener-Waterloo, Ontario</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Cornelia Manda. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
